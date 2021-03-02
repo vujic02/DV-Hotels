@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --denimBlue: #283149;
+  --aeganBlue: #404b69;
+  --pink: #f73859;
+  --fadedWhite: #dbedf3;
+  --black: #111;
+}
