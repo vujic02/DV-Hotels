@@ -4,6 +4,9 @@ export const Nav = styled.nav`
   width: 100%;
   height: 90px;
   background-color: var(--fadedWhite);
+  z-index: 1000;
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -41,7 +44,7 @@ export const Navlink = styled.a`
 `;
 
 export const Button = styled.button`
-  background-color: var(--black);
+  background-color: var(--denimBlue);
   display: inline-block;
   padding: .6rem;
   color: #fff;
@@ -55,8 +58,8 @@ export const Button = styled.button`
   &:active{
     transition: 0.2s all ease-in-out;
     background-color: var(--white);
-    color: var(--black);
-    border: 1px solid var(--black);
+    color: var(--denimBlue);
+    border: 1px solid var(--denimBlue);
   }
 
 `;
@@ -106,6 +109,7 @@ export const MobileIcon = styled.div`
   width: 3rem;
   height: 3rem;
   display: none;
+  cursor: pointer;
 
   @media screen and (max-width: 768px) {
     display: flex;
@@ -121,15 +125,15 @@ export const MobileIcon = styled.div`
   }
 
   .line1 {
-    transform: ${({isOpen}) => (isOpen ? "translateY(12px) rotate(45deg)" : "" )};
+    transform: ${({isOpen}) => (isOpen ? "translateY(16px) rotate(45deg)" : "" )};
   }
 
   .line2 {
-    display: ${({isOpen}) => (isOpen ? "none" : "block")};
+    opacity: ${({isOpen}) => (isOpen ? "0" : "1")};
   }
 
   .line3 {
-    transform: ${({isOpen}) => (isOpen ?  "translateY(-12px) rotate(-45deg)" : "" )};
+    transform: ${({isOpen}) => (isOpen ?  "translateY(-16px) rotate(-45deg)" : "" )};
   }
 
 `;
