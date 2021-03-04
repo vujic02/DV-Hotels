@@ -1,30 +1,41 @@
 import styled from "styled-components";
 
-export const searchDiv = styled.div`
+export const SearchDiv = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 700px;
-  height: 50px;
+  height: 80px;
   padding: 10px;
+  border-radius: 10px;
 
-  background-color: var(--white);
+  background-color: var(--fadedWhite);
 `;
 
-export const searchInput = styled.input`
+export const SearchInput = styled.input`
   width: 500px;
-  height: 50px;
+  height: 40px;
 
   border: none;
   outline: none;
   font-size: 1.5rem;
-  color: #b8b8b8;
+  color: var(--black);
+
+  &:placeholder {
+    color: #b8b8b8;
+    opacity: 1;
+  }
 `;
 
-export const searchButton = styled.button`
-  background-color: var(--white);
+export const SearchButton = styled.button`
+  background-color: var(--fadedWhite);
   color: #b8b8b8;
   display: inline-block;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   cursor: pointer;
   outline: none;
-  border: 2px solid #b8b8b8;
+  border: 1px solid #b8b8b8;
+  height: 40px;
+
+  padding: 10px 15px;
 `;

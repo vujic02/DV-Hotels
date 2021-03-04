@@ -13,16 +13,15 @@ import {
 import { Link } from "react-router-dom";
 import { Links } from "../../utils/Links";
 
-const Navbar = ({toggle, isOpen}) => {
-
+const Navbar = ({ toggle, isOpen }) => {
   let MainLogo = "./images/logo.png";
 
   return (
     <Nav isOpen={isOpen}>
       <Logo src={MainLogo} />
       <LinkDiv>
-        {Links.map((link) => (
-          <Navlink>
+        {Links.map((link, i) => (
+          <Navlink key={i}>
             <Link className="navLink" to={link.path}>
               {link.name}
             </Link>
