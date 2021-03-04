@@ -4,7 +4,6 @@ import {
   Logo,
   LinkDiv,
   Navlink,
-  Button,
   ButtonHolder,
   Avatar,
   MobileIcon,
@@ -15,6 +14,7 @@ import { Links } from "../../utils/Links";
 
 const Navbar = ({ toggle, isOpen }) => {
   let MainLogo = "./images/logo.png";
+  let UserLogo = "./images/user.jpg"
 
   return (
     <Nav isOpen={isOpen}>
@@ -30,8 +30,7 @@ const Navbar = ({ toggle, isOpen }) => {
         ))}
       </LinkDiv>
       <ButtonHolder>
-        <Button>Sign out</Button>
-        <Avatar src={MainLogo} />
+        <Avatar src={UserLogo} />
       </ButtonHolder>
       <MobileIcon isOpen={isOpen} onClick={toggle}>
         <div className="line line1"></div>
