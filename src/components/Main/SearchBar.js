@@ -10,7 +10,12 @@ const SearchBar = () => {
   return (
     <SearchDiv className="center">
       <AiIcons.AiOutlineSearch
-        style={{ width: "30px", height: "30px", marginRight: "10px" }}
+        style={{
+          width: "30px",
+          height: "30px",
+          marginRight: "10px",
+          color: "#b8b8b8",
+        }}
       />
       <SearchInput type="text" placeholder="Search the hotel name" />
       <SearchButton>Search</SearchButton>
