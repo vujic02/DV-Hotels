@@ -18,7 +18,7 @@ const Navbar = ({toggle, isOpen}) => {
   let MainLogo = "./images/logo.png";
 
   return (
-    <Nav>
+    <Nav isOpen={isOpen}>
       <Logo src={MainLogo} />
       <LinkDiv>
         {Links.map((link) => (
