@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const Nav = styled.nav`
   width: 100%;
   height: 90px;
-  background-color: var(--fadedWhite);
+  margin-top: -90px;
+  background-color: var(--navbarWhite);
   z-index: 1000;
   position: sticky;
   top: 0;
@@ -91,10 +92,11 @@ export const LinkDiv = styled.div`
 `;
 
 export const Avatar = styled.img`
-  border-radius: 30px;
+  border-radius: 50%;
   width: 50px;
   height: 50px;
   background-color: white;
+  object-fit: cover;
 `;
 
 export const Logo = styled.img`
