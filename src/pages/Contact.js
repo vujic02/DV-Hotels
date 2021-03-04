@@ -1,10 +1,12 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar";
+import Sidebar from "../components/Sidebar/Sidebar";
 
-const Contact = () => {
+const Contact = ({isOpen, toggle}) => {
   return (
     <div>
-      <Navbar />
+      <Navbar isOpen={isOpen} toggle={toggle} />
+      <Sidebar isOpen={isOpen} toggle={toggle} />
       <h1>Contact Page</h1>
     </div>
   );

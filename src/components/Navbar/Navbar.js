@@ -13,10 +13,9 @@ import {
 import { Link } from "react-router-dom";
 import { Links } from "../../utils/Links";
 
-const Navbar = () => {
-  let MainLogo = "./images/logo.png";
+const Navbar = ({toggle, isOpen}) => {
 
-  // Make a useState hook for isOpen, when MobileIcon is clicked, toggle it between true and false ( make it in App.js )
+  let MainLogo = "./images/logo.png";
 
   return (
     <Nav>
@@ -35,7 +34,7 @@ const Navbar = () => {
         <Button>Sign out</Button>
         <Avatar src={MainLogo} />
       </ButtonHolder>
-      <MobileIcon isOpen={true}>
+      <MobileIcon isOpen={isOpen} onClick={toggle}>
         <div className="line line1"></div>
         <div className="line line2"></div>
         <div className="line line3"></div>

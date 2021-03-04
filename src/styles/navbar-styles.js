@@ -106,6 +106,7 @@ export const MobileIcon = styled.div`
   width: 3rem;
   height: 3rem;
   display: none;
+  cursor: pointer;
 
   @media screen and (max-width: 768px) {
     display: flex;
@@ -121,15 +122,15 @@ export const MobileIcon = styled.div`
   }
 
   .line1 {
-    transform: ${({isOpen}) => (isOpen ? "translateY(12px) rotate(45deg)" : "" )};
+    transform: ${({isOpen}) => (isOpen ? "translateY(16px) rotate(45deg)" : "" )};
   }
 
   .line2 {
-    display: ${({isOpen}) => (isOpen ? "none" : "block")};
+    opacity: ${({isOpen}) => (isOpen ? "0" : "1")};
   }
 
   .line3 {
-    transform: ${({isOpen}) => (isOpen ?  "translateY(-12px) rotate(-45deg)" : "" )};
+    transform: ${({isOpen}) => (isOpen ?  "translateY(-16px) rotate(-45deg)" : "" )};
   }
 
 `;
