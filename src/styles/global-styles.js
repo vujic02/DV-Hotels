@@ -47,4 +47,33 @@ export const Overlay = styled.div`
     background: ${({bg}) => bg};
     padding: ${({p}) => p};
     margin: ${({m}) => m};
+
+    @media screen and (max-width: 768px) {
+        padding: ${({pM}) => pM};
+    }  
+`
+
+export const Button = styled.div`
+    width: ${({w}) => w};
+    height: ${({h}) => h};
+    display: flex;
+    justify-content: ${({justify}) => justify};
+    align-items: ${({align}) => align};
+    flex-direction: ${({flexDir}) => flexDir};
+    background: ${({bg}) => bg};
+    padding: ${({p}) => p};
+    margin: ${({m}) => m};
+    border: ${({bor}) => bor};
+    border-radius: ${({borR}) => borR};
+    color: ${({col}) => col};
+    font-size: ${({fontS}) => fontS};
+    font-weight: ${({fontW}) => fontW};
+    cursor: pointer;
+
+    &:hover {
+        transition: all ease-in-out 0.3s;
+        border: ${({borH}) => borH};
+        background: ${({bgH}) => bgH};
+        color: ${({colH}) => colH};
+    }
 `
