@@ -12,7 +12,6 @@ const Home = ({ toggle, isOpen }) => {
     <div>
       <Navbar isOpen={isOpen} toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
-
       <LandingOverlay
         bgImage="./images/landing.jpg"
         bgPos="center"
@@ -26,7 +25,8 @@ const Home = ({ toggle, isOpen }) => {
           justify="center"
           w="100%"
           h="100%"
-          p="0 10%"
+          p="0 15%"
+          pM="0 10%"
         >
           <SearchBar />
         </Overlay>
