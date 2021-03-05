@@ -26,6 +26,12 @@ export const Navlink = styled.a`
   position: relative;
   overflow: hidden;
 
+  .navLink {
+    text-decoration: none;
+    background-color: none;
+    color: var(--black);
+  }
+
   .underline {
     position: absolute;
     left: -100%;
