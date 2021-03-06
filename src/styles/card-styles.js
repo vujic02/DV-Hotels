@@ -6,12 +6,14 @@ export const CardDescription = styled.p`
   color: var(--black);
   font-size: 1.2rem;
   font-weight: 600;
+  padding: .9rem 0;
 `;
 
 export const CardHeader = styled.h1`
   color: var(--black);
   font-size: 2rem;
   font-weight: 200;
+  padding: .9rem 0;
 `;
 
 export const CardImage = styled.img`
@@ -23,13 +25,15 @@ export const CardImage = styled.img`
 export const PriceTag = styled.h3`
   font-size: 1.5rem;
   font-weight: 200;
-  text-shadow: var(--white);
+  text-shadow: 2px 4px 4px var(--black);
   color: var(--white);
 `;
 
 export const PriceTagWrapper = styled.div`
   position: absolute;
   background-color: rgba(1, 1, 1, 0.35);
+  padding: .3rem;
+  border-radius: 5px;
 
   top: 20px;
   right: 20px;
@@ -37,7 +41,7 @@ export const PriceTagWrapper = styled.div`
 
 export const CardDiv = styled.div`
   width: 600px;
-  height: 400px;
+  height: 450px;
 
   background-color: var(--white);
   display: flex;
@@ -49,8 +53,10 @@ export const CardDiv = styled.div`
 
 export const FilledStar = styled(AiFillStar)`
   color: var(--denimBlue);
+  font-size: 1.5rem;
 `;
 
 export const OutlineStar = styled(AiOutlineStar)`
-  background-color: var(--white);
+  color: var(--denimBlue);
+  font-size: 1.5rem;
 `;
