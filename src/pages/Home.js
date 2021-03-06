@@ -7,6 +7,8 @@ import { LandingOverlay } from "../styles/home-styles";
 
 import { Overlay } from "../styles/global-styles";
 
+import Card from "../components/Main/Card";
+
 const Home = ({ toggle, isOpen }) => {
   return (
     <div>
@@ -29,6 +31,7 @@ const Home = ({ toggle, isOpen }) => {
           pM="0 10%"
         >
           <SearchBar />
+          <Card />
         </Overlay>
       </LandingOverlay>
     </div>
