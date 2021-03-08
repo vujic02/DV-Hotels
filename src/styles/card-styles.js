@@ -43,7 +43,7 @@ export const CardDiv = styled.div`
   width: 600px;
   height: 450px;
 
-  background-color: var(--white);
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;

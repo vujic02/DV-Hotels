@@ -9,6 +9,10 @@ export const Container = styled.div`
     height: ${({h}) => h};
     margin: ${({m}) => m};
     padding: ${({p}) => p};
+
+    @media screen and (max-width: 1366px) {
+        width: ${({wM1}) => wM1};
+    }
 `;
 
 export const Grid = styled.div`
@@ -30,6 +34,19 @@ export const TextP = styled.p`
     font-size: ${({fontS}) => fontS};
     font-weight: ${({fontW}) => fontW};
     color: ${({col}) => col};
+    margin: ${({m}) => m};
+
+    @media screen and (max-width: 768px) {
+        font-size: ${({fontSM}) => fontSM};
+        font-weight: ${({fontWM}) => fontWM};
+    }
+`
+
+export const TextH1 = styled.h1`
+    font-size: ${({fontS}) => fontS};
+    font-weight: ${({fontW}) => fontW};
+    color: ${({col}) => col};
+    margin: ${({m}) => m};
 
     @media screen and (max-width: 768px) {
         font-size: ${({fontSM}) => fontSM};

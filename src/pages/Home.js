@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Sidebar from "../components/Sidebar/Sidebar";
 import SearchBar from "../components/Main/SearchBar";
+import Text from "../components/Main/Text"
 
 import { LandingOverlay } from "../styles/home-styles";
 
@@ -22,7 +23,7 @@ const Home = ({ toggle, isOpen }) => {
         h="860px"
       >
         <Overlay
-          bg="linear-gradient(0deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.3) 90%)"
+          bg="linear-gradient(0deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.35) 90%)"
           flexDir="column"
           justify="center"
           w="100%"
@@ -30,8 +31,8 @@ const Home = ({ toggle, isOpen }) => {
           p="0 15%"
           pM="0 10%"
         >
+          <Text containerMargin="8% 0" />
           <SearchBar />
-          <Card />
         </Overlay>
       </LandingOverlay>
     </div>
