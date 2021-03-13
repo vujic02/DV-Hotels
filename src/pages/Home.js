@@ -6,13 +6,13 @@ import Text from "../components/Main/Text"
 
 import { LandingOverlay } from "../styles/home-styles";
 
-import { Overlay } from "../styles/global-styles";
+import { Grid, Overlay, SectionHeading, TextH1 } from "../styles/global-styles";
 
 import Card from "../components/Main/Card";
 
 const Home = ({ toggle, isOpen }) => {
   return (
-    <div>
+    <section className="home-page">
       <Navbar isOpen={isOpen} toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <LandingOverlay
@@ -35,7 +35,16 @@ const Home = ({ toggle, isOpen }) => {
           <SearchBar />
         </Overlay>
       </LandingOverlay>
-    </div>
+      <SectionHeading lineCol="#111" m="5% 0 0 0">
+        <TextH1 fontS="2rem" fontW="300">Search Results</TextH1>
+        <div className="bottom-line"></div>
+      </SectionHeading>
+      <Grid cols="repeat(3, 1fr)" colsM1="repeat(2, 1fr)" colsM2="1fr" gridGap="1rem" p="5% 5% 0 5%">
+        <Card />
+        <Card />
+        <Card />
+      </Grid>
+    </section>
   );
 };
 

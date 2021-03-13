@@ -23,7 +23,7 @@ export const CardImage = styled.img`
 `;
 
 export const PriceTag = styled.h3`
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 200;
   text-shadow: 2px 4px 4px var(--black);
   color: var(--white);
@@ -32,7 +32,7 @@ export const PriceTag = styled.h3`
 export const PriceTagWrapper = styled.div`
   position: absolute;
   background-color: rgba(1, 1, 1, 0.35);
-  padding: .3rem;
+  padding: .3rem .5rem;
   border-radius: 5px;
 
   top: 20px;
@@ -40,7 +40,7 @@ export const PriceTagWrapper = styled.div`
 `;
 
 export const CardDiv = styled.div`
-  width: 600px;
+  width: 100%;
   height: 450px;
 
   background-color: transparent;
