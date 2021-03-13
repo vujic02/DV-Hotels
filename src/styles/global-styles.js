@@ -20,6 +20,9 @@ export const Grid = styled.div`
     grid-template-columns: ${({cols}) => cols};
     width: ${({w}) => w};
     height: ${({h}) => h};
+    gap: ${({gridGap}) => gridGap};
+    margin: ${({m}) => m};
+    padding: ${({p}) => p};
 
     @media screen and (max-width: 1366px) {
         grid-template-columns: ${({colsM1}) => colsM1};
@@ -92,5 +95,21 @@ export const Button = styled.div`
         border: ${({borH}) => borH};
         background: ${({bgH}) => bgH};
         color: ${({colH}) => colH};
+    }
+`
+
+export const SectionHeading = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 6rem;
+    margin: ${({m}) => m};
+    padding: ${({p}) => p};
+
+    .bottom-line {
+        background: ${({lineCol}) => lineCol};
+        width: 100px;
+        height: 2px;
     }
 `
