@@ -20,8 +20,9 @@ export const Grid = styled.div`
     grid-template-columns: ${({cols}) => cols};
     width: ${({w}) => w};
     height: ${({h}) => h};
-    padding: ${({p}) => p};
     gap: ${({gridGap}) => gridGap};
+    margin: ${({m}) => m};
+    padding: ${({p}) => p};
 
     @media screen and (max-width: 1366px) {
         grid-template-columns: ${({colsM1}) => colsM1};
