@@ -20,6 +20,8 @@ export const Grid = styled.div`
     grid-template-columns: ${({cols}) => cols};
     width: ${({w}) => w};
     height: ${({h}) => h};
+    padding: ${({p}) => p};
+    gap: ${({gridGap}) => gridGap};
 
     @media screen and (max-width: 1366px) {
         grid-template-columns: ${({colsM1}) => colsM1};
@@ -47,6 +49,9 @@ export const TextH1 = styled.h1`
     font-weight: ${({fontW}) => fontW};
     color: ${({col}) => col};
     margin: ${({m}) => m};
+    padding: ${({p}) => p};
+    text-align: ${({alignText}) => alignText};
+    opacity: ${({opac}) => opac};
 
     @media screen and (max-width: 768px) {
         font-size: ${({fontSM}) => fontSM};
@@ -93,4 +98,14 @@ export const Button = styled.div`
         background: ${({bgH}) => bgH};
         color: ${({colH}) => colH};
     }
+`
+
+export const Img = styled.img`
+    width: ${({w}) => w};
+    height: ${({h}) => h};
+    object-fit: ${({objFit}) => objFit};
+    object-position: ${({objPos}) => objPos};
+    margin: ${({m}) => m};
+    padding: ${({p}) => p};
+    border-radius: ${({borR}) => borR};
 `

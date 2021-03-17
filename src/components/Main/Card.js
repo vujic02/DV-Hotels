@@ -8,6 +8,7 @@ import {
   FilledStar,
   OutlineStar,
   PriceTagWrapper,
+  StarContainer,
 } from "../../styles/card-styles";
 
 import TestImage from "../../hotel.jpg";
@@ -20,13 +21,13 @@ const Card = () => {
         <PriceTag>$120/Night</PriceTag>
       </PriceTagWrapper>
       <CardHeader>Hotel Las Vegas</CardHeader>
-      <div>
-        <FilledStar />
-        <FilledStar />
-        <FilledStar />
-        <FilledStar />
-        <OutlineStar />
-      </div>
+      <StarContainer>
+          <FilledStar />
+          <FilledStar />
+          <FilledStar />
+          <FilledStar />
+          <OutlineStar />
+      </StarContainer>
       <CardDescription>Las Vegas Hotel Test</CardDescription>
     </CardDiv>
   );

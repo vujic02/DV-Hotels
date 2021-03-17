@@ -10,29 +10,33 @@ export const CardDescription = styled.p`
 `;
 
 export const CardHeader = styled.h1`
-  color: var(--black);
+  position: absolute;
+  bottom: 3rem;
+  color: var(--white);
   font-size: 2rem;
   font-weight: 200;
   padding: .9rem 0;
+  text-shadow: 1px 4px 4px #111;
 `;
 
 export const CardImage = styled.img`
   width: 100%;
-  height: 300px;
+  height: 100%;
   object-fit: cover;
+  border-radius: 10px;
 `;
 
 export const PriceTag = styled.h3`
-  font-size: 1.5rem;
-  font-weight: 200;
+  font-size: 1.2rem;
+  font-weight: 500;
   text-shadow: 2px 4px 4px var(--black);
   color: var(--white);
 `;
 
 export const PriceTagWrapper = styled.div`
   position: absolute;
-  background-color: rgba(1, 1, 1, 0.35);
-  padding: .3rem;
+  background-color: rgba(1, 1, 1, 0.4);
+  padding: .5rem .9rem;
   border-radius: 5px;
 
   top: 20px;
@@ -40,7 +44,7 @@ export const PriceTagWrapper = styled.div`
 `;
 
 export const CardDiv = styled.div`
-  width: 600px;
+  width: 100%;
   height: 450px;
 
   background-color: transparent;
@@ -60,3 +64,14 @@ export const OutlineStar = styled(AiOutlineStar)`
   color: var(--denimBlue);
   font-size: 1.5rem;
 `;
+
+export const StarContainer = styled.div`
+  display: flex;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  @media screen and (max-width: 768px) {
+    top: 30px;
+  }
+`
