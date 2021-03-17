@@ -10,10 +10,6 @@ import { LandingOverlay } from "../styles/home-styles";
 import { Grid, Overlay, TextH1 } from "../styles/global-styles";
 import { Paths } from "../utils/Links";
 
-import { LandingOverlay } from "../styles/home-styles";
-import { Grid, Overlay, TextH1 } from "../styles/global-styles";
-import { Paths } from "../utils/Links";
-
 const Home = ({ toggle, isOpen }) => {
   return (
     <section className="home-page">
