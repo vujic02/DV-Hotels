@@ -2,13 +2,17 @@ import React from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Sidebar from "../components/Sidebar/Sidebar";
 import SearchBar from "../components/Main/SearchBar";
-import Text from "../components/Main/Text"
+import Text from "../components/Main/Text";
+import Card from "../components/Main/Card";
+import NearbyCard from "../components/Main/NearbyCard";
 
 import { LandingOverlay } from "../styles/home-styles";
+import { Grid, Overlay, TextH1 } from "../styles/global-styles";
+import { Paths } from "../utils/Links";
 
-import { Grid, Overlay, SectionHeading, TextH1 } from "../styles/global-styles";
-
-import Card from "../components/Main/Card";
+import { LandingOverlay } from "../styles/home-styles";
+import { Grid, Overlay, TextH1 } from "../styles/global-styles";
+import { Paths } from "../utils/Links";
 
 const Home = ({ toggle, isOpen }) => {
   return (
@@ -35,14 +39,17 @@ const Home = ({ toggle, isOpen }) => {
           <SearchBar />
         </Overlay>
       </LandingOverlay>
-      <SectionHeading lineCol="#111" m="5% 0 0 0">
-        <TextH1 fontS="2rem" fontW="300">Search Results</TextH1>
-        <div className="bottom-line"></div>
-      </SectionHeading>
-      <Grid cols="repeat(3, 1fr)" colsM1="repeat(2, 1fr)" colsM2="1fr" gridGap="1rem" p="5% 5% 0 5%">
-        <Card />
-        <Card />
-        <Card />
+      <TextH1 opac="0.85" alignText="left" fontS="2rem" fontW="700" m="5% 0 0 5%">Search Results</TextH1>
+      <Grid cols="repeat(3, 1fr)" colsM1="repeat(2, 1fr)" colsM2="1fr" gridGap="1rem" p="1% 5% 0 5%">
+          <Card />
+          <Card />
+          <Card />
+      </Grid>
+      <TextH1 opac="0.85" alignText="left" fontS="2rem" fontW="700" m="5% 0 0 5%">Explore Nearby</TextH1>
+      <Grid cols="repeat(4, 1fr)" colsM1="repeat(3, 1fr)" colsM2="repeat(2, 1fr)" gridGap="2rem" p="1% 5% 0 5%">
+        {Paths.map(place => (
+          <NearbyCard imgSrc={place.path} imgName={place.name} />
+        ))}
       </Grid>
     </section>
   );

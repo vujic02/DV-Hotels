@@ -8,6 +8,7 @@ import {
   FilledStar,
   OutlineStar,
   PriceTagWrapper,
+  StarContainer,
 } from "../../styles/card-styles";
 import {Container} from "../../styles/global-styles"
 

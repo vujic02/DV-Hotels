@@ -50,6 +50,9 @@ export const TextH1 = styled.h1`
     font-weight: ${({fontW}) => fontW};
     color: ${({col}) => col};
     margin: ${({m}) => m};
+    padding: ${({p}) => p};
+    text-align: ${({alignText}) => alignText};
+    opacity: ${({opac}) => opac};
 
     @media screen and (max-width: 768px) {
         font-size: ${({fontSM}) => fontSM};
@@ -98,18 +101,12 @@ export const Button = styled.div`
     }
 `
 
-export const SectionHeading = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    height: 6rem;
+export const Img = styled.img`
+    width: ${({w}) => w};
+    height: ${({h}) => h};
+    object-fit: ${({objFit}) => objFit};
+    object-position: ${({objPos}) => objPos};
     margin: ${({m}) => m};
     padding: ${({p}) => p};
-
-    .bottom-line {
-        background: ${({lineCol}) => lineCol};
-        width: 100px;
-        height: 2px;
-    }
+    border-radius: ${({borR}) => borR};
 `
