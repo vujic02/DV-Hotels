@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-
 export const CardDescription = styled.p`
   color: var(--black);
   font-size: 1.2rem;
@@ -55,23 +53,3 @@ export const CardDiv = styled.div`
   position: relative;
 `;
 
-export const FilledStar = styled(AiFillStar)`
-  color: var(--denimBlue);
-  font-size: 1.5rem;
-`;
-
-export const OutlineStar = styled(AiOutlineStar)`
-  color: var(--denimBlue);
-  font-size: 1.5rem;
-`;
-
-export const StarContainer = styled.div`
-  display: flex;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-
-  @media screen and (max-width: 768px) {
-    top: 30px;
-  }
-`
