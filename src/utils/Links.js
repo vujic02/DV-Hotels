@@ -49,3 +49,22 @@ export const Paths = [
   },
 ];
 
+export const HomePageImgs = [
+  {
+    name: "Unique Stays",
+    path: "./images/homepage/1.jpg",
+  },
+  {
+    name: "Luxury Places",
+    path: "./images/homepage/2.jpg",
+  },
+  {
+    name: "Cozy Cottages",
+    path: "./images/homepage/3.jpg",
+  },
+  {
+    name: "Pet Friendly",
+    path: "./images/homepage/4.jpg",
+  }
+];
+

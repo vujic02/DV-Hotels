@@ -5,11 +5,14 @@ import {
   CardImage,
   PriceTag,
   CardDiv,
-  FilledStar,
-  OutlineStar,
-  PriceTagWrapper,
-  StarContainer,
+  PriceTagWrapper
 } from "../../styles/card-styles";
+
+import {
+  StarContainer,
+  FilledStar,
+  EmptyStar
+}  from "../../styles/global-styles"
 
 import TestImage from "../../hotel.jpg";
 
@@ -21,12 +24,12 @@ const Card = () => {
         <PriceTag>$120/Night</PriceTag>
       </PriceTagWrapper>
       <CardHeader>Hotel Las Vegas</CardHeader>
-      <StarContainer>
-        <FilledStar />
-        <FilledStar />
-        <FilledStar />
-        <FilledStar />
-        <OutlineStar />
+      <StarContainer pos="absolute" l="20px" t="20px" tM="30px">
+        <FilledStar col="var(--denimBlue)" fontS="1.5rem" />
+        <FilledStar col="var(--denimBlue)" fontS="1.5rem" />
+        <FilledStar col="var(--denimBlue)" fontS="1.5rem" />
+        <FilledStar col="var(--denimBlue)" fontS="1.5rem"/>
+        <EmptyStar col="var(--denimBlue)" fontS="1.5rem" />
       </StarContainer>
       <CardDescription>Las Vegas Hotel Test</CardDescription>
     </CardDiv>
