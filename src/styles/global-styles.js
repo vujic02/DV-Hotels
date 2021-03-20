@@ -31,14 +31,18 @@ export const Grid = styled.div`
     gap: ${({gridGap}) => gridGap};
     margin: ${({m}) => m};
     padding: ${({p}) => p};
+    justify-items: ${({justify}) => justify};
+    align-items: ${({align}) => align};
 
     @media screen and (max-width: 1366px) {
         grid-template-columns: ${({colsM1}) => colsM1};
+        margin: ${({mM1}) => mM1};
     }
 
     @media screen and (max-width: 768px) {
         grid-template-columns: ${({colsM2}) => colsM2};
         padding: ${({pM}) => pM};
+        margin: ${({mM2}) => mM2};
         gap: ${({gridGapM}) => gridGapM};
     }
 `

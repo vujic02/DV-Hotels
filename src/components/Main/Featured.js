@@ -4,7 +4,7 @@ import { Container, Img, TextH1, Overlay, DivImg, TextP, FilledStar, StarContain
 
 const Featured = () => {
     return (
-        <Container h="526px" w="100%" p="0 5%" pos="relative" m="10% 0">
+        <Container h="526px" w="100%" p="0 5%" pos="relative" m="0 0 8% 0">
             <DivImg bgPos="center" bgSize="cover" borR=".5rem"  bgImage="./images/homepage/featured.jpg" w="100%" h="100%">
                 <Overlay borR=".5rem" w="100%" h="100%" bg="linear-gradient(270deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.92) 80%)">
                 <Container w="100%" h="100%" flexDir="column" justify="center" align="flex-start" p="0 0 0 5%">
