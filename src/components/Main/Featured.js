@@ -15,11 +15,11 @@ const Featured = () => {
                         <TextH1 p="0 0 0 1%" fontS="3rem" fontW="400" col="var(--white)">Hotel Plaza</TextH1>
                     </Container>
                     <StarContainer m=".5% 0 0 0">
-                        <FilledStar col="var(--white)" fontS="2rem" />
-                        <FilledStar col="var(--white)" fontS="2rem" />
-                        <FilledStar col="var(--white)" fontS="2rem" />
-                        <FilledStar col="var(--white)" fontS="2rem"/>
-                        <FilledStar col="var(--white)" fontS="2rem" />
+                        <FilledStar col="var(--white)" w="2rem" h="2rem" />
+                        <FilledStar col="var(--white)" w="2rem" h="2rem" />
+                        <FilledStar col="var(--white)" w="2rem" h="2rem" />
+                        <FilledStar col="var(--white)" w="2rem" h="2rem"/>
+                        <FilledStar col="var(--white)" w="2rem" h="2rem" />
                     </StarContainer>
                     <TextH1 m="1% 0 0 0" fontS="2rem" fontW="500" col="var(--aeganBlue)">200$/night</TextH1>
                     <TextP m="1% 0 0 0" fontS="1.5rem" fontW="500" col="var(--white)">Hotel playa is a luxurious hotel on the beaches of italy.</TextP>

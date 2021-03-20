@@ -149,12 +149,14 @@ export const DivImg = styled.div`
 
 export const FilledStar = styled(AiFillStar)`
   color: ${({col}) => col};
-  font-size: ${({fontS}) => fontS};
+  width: ${({w}) => w};
+  height: ${({h}) => h};
 `;
 
 export const EmptyStar = styled(AiOutlineStar)`
   color: ${({col}) => col};
-  font-size: ${({fontS}) => fontS};
+  width: ${({w}) => w};
+  height: ${({h}) => h};
 `;
 
 export const StarContainer = styled.div`

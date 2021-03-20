@@ -25,11 +25,11 @@ const Card = () => {
       </PriceTagWrapper>
       <CardHeader>Hotel Las Vegas</CardHeader>
       <StarContainer pos="absolute" l="20px" t="20px" tM="30px">
-        <FilledStar col="var(--denimBlue)" fontS="1.5rem" />
-        <FilledStar col="var(--denimBlue)" fontS="1.5rem" />
-        <FilledStar col="var(--denimBlue)" fontS="1.5rem" />
-        <FilledStar col="var(--denimBlue)" fontS="1.5rem"/>
-        <EmptyStar col="var(--denimBlue)" fontS="1.5rem" />
+        <FilledStar col="var(--denimBlue)" w="1.5rem" h="1.5rem" />
+        <FilledStar col="var(--denimBlue)" w="1.5rem" h="1.5rem" />
+        <FilledStar col="var(--denimBlue)" w="1.5rem" h="1.5rem" />
+        <FilledStar col="var(--denimBlue)" w="1.5rem" h="1.5rem"/>
+        <EmptyStar col="var(--denimBlue)" w="1.5rem" h="1.5rem" />
       </StarContainer>
       <CardDescription>Las Vegas Hotel Test</CardDescription>
     </CardDiv>

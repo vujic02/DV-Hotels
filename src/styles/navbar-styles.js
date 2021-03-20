@@ -18,15 +18,15 @@ export const Nav = styled.nav`
   }
 `;
 
-export const Navlink = styled.a`
-  font-size: 1.5rem;
-  font-weight: 500;
-  font-family: Montserrat, sans-serif;
-  color: var(--black);
+export const Navlink = styled.div`
   position: relative;
   overflow: hidden;
 
   .navLink {
+    color: var(--black);
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: Montserrat, sans-serif;
     text-decoration: none;
     background-color: none;
     color: var(--black);
