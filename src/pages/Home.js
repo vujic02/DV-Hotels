@@ -5,12 +5,13 @@ import SearchBar from "../components/Main/SearchBar";
 import Text from "../components/Main/Text";
 import Card from "../components/Main/Card";
 import NearbyCard from "../components/Main/NearbyCard";
+import ReusableCard from "../components/Main/ReusableCard";
+import Featured from "../components/Main/Featured";
+import Footer from "../components/Footer/Footer"
 
 import { LandingOverlay } from "../styles/home-styles";
 import { Grid, Overlay, TextH1 } from "../styles/global-styles";
 import { Paths, HomePageImgs } from "../utils/Links";
-import ReusableCard from "../components/Main/ReusableCard";
-import Featured from "../components/Main/Featured";
 
 const Home = ({ toggle, isOpen }) => {
   return (
@@ -45,17 +46,19 @@ const Home = ({ toggle, isOpen }) => {
       </Grid>
       <TextH1 opac="0.85" alignText="left" fontS="2rem" fontW="700" m="5% 0 0 5%">Explore Nearby</TextH1>
       <Grid cols="repeat(4, 1fr)" colsM1="repeat(3, 1fr)" colsM2="repeat(2, 1fr)" gridGap="2rem" p="1% 5% 0 5%" pM="3% 5% 0 5%">
-        {Paths.map(place => (
-          <NearbyCard imgSrc={place.path} imgName={place.name} />
+        {Paths.map((place, idx) => (
+          <NearbyCard key={idx} imgSrc={place.path} imgName={place.name} />
         ))}
       </Grid>
       <TextH1 opac="0.85" alignText="left" fontS="2rem" fontW="700" m="5% 0 0 5%">Explore Nearby</TextH1>
       <Grid cols="repeat(4, 1fr)" colsM1="repeat(3, 1fr)" colsM2="repeat(2, 1fr)" gridGap="1rem" p="1% 5% 0 5%" pM="3% 5% 0 5%">
-        {HomePageImgs.map(img=> (
-          <ReusableCard imgSrc={img.path} imgName={img.name} />
+        {HomePageImgs.map((img, idx)=> (
+          <ReusableCard key={idx} imgSrc={img.path} imgName={img.name} />
         ))}
       </Grid>
-      <Featured></Featured>
+      <TextH1 opac="0.85" alignText="left" fontS="2rem" fontW="700" m="5% 0 1% 5%">Featured Hotel</TextH1>
+      <Featured />
+      <Footer />
     </section>
   );
 };
