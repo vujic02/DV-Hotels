@@ -35,9 +35,7 @@ const Navbar = ({ toggle, isOpen, toggleModal, modalState }) => {
       <ButtonHolder onClick={toggleModal} openModal={modalState}>
         <Avatar src={UserLogo} />
       </ButtonHolder>
-      {modalState ? (
-      <AuthModal />
-      ) : null}
+      <AuthModal modalState={modalState} />
       <MobileIcon isOpen={isOpen} onClick={toggle}>
         <div className="line line1"></div>
         <div className="line line2"></div>

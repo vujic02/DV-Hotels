@@ -81,14 +81,16 @@ export const ButtonHolder = styled.div`
   position: relative;
 
   &::before {
-    z-index: ${({openModal}) => (openModal ? "200" : "-1")};
-    ${({openModal}) => openModal && "content: ''; "} // advanced use of styled components https://styled-components.com/docs/advanced#tagged-template-literals
-    border-style: ${({openModal}) => (openModal ? "solid" : null)};
-    border-width: ${({openModal}) => (openModal ? "30px 35px 30px 0" : null)};
-    border-color: ${({openModal}) => (openModal ? "transparent #fff transparent transparent" : null)};
-    position: ${({openModal}) => (openModal ? "absolute" : null)};
-    transform: ${({openModal}) => (openModal ? "rotate(90deg)" : null)};
-    bottom: ${({openModal}) => (openModal ? "-28px" : null)};
+    opacity: ${({openModal}) => (openModal ? "1" : "0")};
+    transition: linear all 0.5s;
+    z-index: 1100;
+    content: ""; // advanced use of styled components https://styled-components.com/docs/advanced#tagged-template-literals
+    border-style: solid;
+    border-width: 15px 20px 15px 0;
+    border-color: transparent #fff transparent transparent;
+    position: absolute;
+    transform: rotate(90deg);
+    bottom: -5px;
   }
 
   @media screen and (max-width: 768px) {
@@ -115,6 +117,7 @@ export const Avatar = styled.img`
   height: 50px;
   background-color: white;
   object-fit: cover;
+  cursor: pointer;
 `;
 
 export const Logo = styled.img`
