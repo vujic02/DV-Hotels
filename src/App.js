@@ -8,6 +8,13 @@ import Hotels from "./pages/Hotels";
 function App() {
 
   const [isOpen, setIsOpen] = useState(false);
+  const [modalState, setModalState] = useState(false);
+
+  const toggleModal = () => {
+    setModalState(prev => !prev);
+  }
+
+  console.log(modalState)
 
   const toggle = () => {
     setIsOpen(prev => !prev);
@@ -17,7 +24,7 @@ function App() {
     <div className="App">
       <Router>
         <Route exact path="/">
-          <Home isOpen={isOpen} toggle={toggle} />
+          <Home toggleModal={toggleModal} modalState={modalState} isOpen={isOpen} toggle={toggle} />
         </Route>
         <Route path="/about">
           <About isOpen={isOpen} toggle={toggle} />

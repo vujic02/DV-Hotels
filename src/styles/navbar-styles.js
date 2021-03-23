@@ -9,7 +9,7 @@ export const Nav = styled.nav`
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 
   @media screen and (max-width: 768px) {
@@ -78,6 +78,18 @@ export const ButtonHolder = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: relative;
+
+  &::before {
+    z-index: ${({openModal}) => (openModal ? "200" : "-1")};
+    ${({openModal}) => openModal && "content: ''; "} // advanced use of styled components https://styled-components.com/docs/advanced#tagged-template-literals
+    border-style: ${({openModal}) => (openModal ? "solid" : null)};
+    border-width: ${({openModal}) => (openModal ? "30px 35px 30px 0" : null)};
+    border-color: ${({openModal}) => (openModal ? "transparent #fff transparent transparent" : null)};
+    position: ${({openModal}) => (openModal ? "absolute" : null)};
+    transform: ${({openModal}) => (openModal ? "rotate(90deg)" : null)};
+    bottom: ${({openModal}) => (openModal ? "-28px" : null)};
+  }
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -106,8 +118,13 @@ export const Avatar = styled.img`
 `;
 
 export const Logo = styled.img`
+  margin-left: 7rem;
   width: 80px;
   height: 80px;
+  cursor: pointer;
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+  }
 `;
 
 export const MobileIcon = styled.div`
