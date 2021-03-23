@@ -17,6 +17,7 @@ export const Container = styled.div`
     bottom: ${({b}) => b};
     background: ${({bg}) => bg};
     border-radius: ${({borR}) => borR};
+    box-shadow: ${({shadow}) => shadow};
 
     @media screen and (max-width: 1366px) {
         width: ${({wM1}) => wM1};

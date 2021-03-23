@@ -13,10 +13,10 @@ import { LandingOverlay } from "../styles/home-styles";
 import { Grid, Overlay, TextH1 } from "../styles/global-styles";
 import { Paths, HomePageImgs } from "../utils/Links";
 
-const Home = ({ toggle, isOpen }) => {
+const Home = ({ toggle, isOpen, modalState, toggleModal }) => {
   return (
     <section className="home-page">
-      <Navbar isOpen={isOpen} toggle={toggle} />
+      <Navbar isOpen={isOpen} toggle={toggle} toggleModal={toggleModal} modalState={modalState} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <LandingOverlay
         bgImage="./images/landing.jpg"
