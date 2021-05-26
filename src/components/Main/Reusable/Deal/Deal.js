@@ -11,22 +11,21 @@ const Deal = ({ text1, text2, imgPath }) => {
       w="100%"
       h="350px"
       pos="relative"
+      flexDir="column"
+      justify="flex-start"
+      align="flex-start"
     >
       <TextP
-        pos="absolute"
-        t="1rem"
-        l="1rem"
-        fontS="1.5rem"
-        fontW="500"
+        m="1rem 0 1rem 1rem"
+        fontS="2rem"
+        fontW="700"
         col="#fff"
         breakWord="break-word"
       >
         {text1}
       </TextP>
       <TextP
-        pos="absolute"
-        t="3rem"
-        l="1rem"
+        m="0 0 1rem 1rem"
         fontS="1.5rem"
         fontW="500"
         col="#fff"

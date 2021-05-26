@@ -65,6 +65,18 @@ export const HomePageImgs = [
   {
     name: "Pet Friendly",
     path: "./images/homepage/4.jpg",
-  }
+  },
 ];
 
+export const Deals = [
+  {
+    text1: "Hybrid Rooms",
+    text2: "The perfect choice for your business travels.",
+    img: "./images/deals1.jpg",
+  },
+  {
+    text1: "Double the points, double the rewards.",
+    text2: "Earn 2x points for your stay through April 20",
+    img: "./images/deals2.jpg",
+  },
+];
