@@ -4,6 +4,8 @@ import { Container, Img, TextH1 } from "../../styles/global-styles";
 import { VscSignIn, VscSignOut } from "react-icons/vsc";
 import { FiSettings } from "react-icons/fi";
 
+import { Link } from "react-router-dom";
+
 const AuthModal = ({ modalState }) => {
   return (
     <Modal modalState={modalState}>
@@ -93,7 +95,12 @@ const AuthModal = ({ modalState }) => {
             Don't have an account?
           </TextH1>
           <TextH1 fontS="0.9rem" fontW="800" col="rgba(0, 0, 0, 0.9)">
-            Register
+            <Link
+              style={{ textDecoration: "none", color: "rgba(0,0,0,0.7)" }}
+              to="/login"
+            >
+              Register
+            </Link>
           </TextH1>
         </Container>
       </ModalContainer>

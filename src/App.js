@@ -1,41 +1,52 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Hotels from "./pages/Hotels";
+
+import { Home, Register, Login, Contact, Hotels, About } from "./pages";
+import { UserProvider } from "./context/userContext";
 
 function App() {
-
   const [isOpen, setIsOpen] = useState(false);
   const [modalState, setModalState] = useState(false);
 
   const toggleModal = () => {
-    setModalState(prev => !prev);
-  }
+    setModalState((prev) => !prev);
+  };
 
-  console.log(modalState)
+  console.log(modalState);
 
   const toggle = () => {
-    setIsOpen(prev => !prev);
-  }
+    setIsOpen((prev) => !prev);
+  };
 
   return (
     <div className="App">
-      <Router>
-        <Route exact path="/">
-          <Home toggleModal={toggleModal} modalState={modalState} isOpen={isOpen} toggle={toggle} />
-        </Route>
-        <Route path="/about">
-          <About isOpen={isOpen} toggle={toggle} />
-        </Route>
-        <Route path="/hotels">
-          <Hotels isOpen={isOpen} toggle={toggle} />
-        </Route>
-        <Route path="/contact">
-          <Contact isOpen={isOpen} toggle={toggle} />
-        </Route>
-      </Router>
+      <UserProvider>
+        <Router>
+          <Route exact path="/">
+            <Home
+              toggleModal={toggleModal}
+              modalState={modalState}
+              isOpen={isOpen}
+              toggle={toggle}
+            />
+          </Route>
+          <Route path="/about">
+            <About isOpen={isOpen} toggle={toggle} />
+          </Route>
+          <Route path="/hotels">
+            <Hotels isOpen={isOpen} toggle={toggle} />
+          </Route>
+          <Route path="/contact">
+            <Contact isOpen={isOpen} toggle={toggle} />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/register">
+            <Register />
+          </Route>
+        </Router>
+      </UserProvider>
     </div>
   );
 }
