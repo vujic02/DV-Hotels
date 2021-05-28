@@ -16,4 +16,5 @@ export const CountryFlag = styled.img`
   width: 32px;
   height: 32px;
   object-fit: cover;
+  margin-left: 5px;
 `;
