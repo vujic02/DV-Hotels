@@ -7,8 +7,9 @@ import { Container, DivImg, Img, TextP, Button } from "../styles/global-styles";
 import { userContext } from "../context/userContext";
 
 const Register = ({ isOpen, toggle, toggleModal, modalState }) => {
-  const { userFuncs } = useContext(userContext);
+  const { userFuncs, err } = useContext(userContext);
   const [registerUser] = userFuncs;
+  const [error, setError] = err;
 
   // useStates
   const [name, setName] = useState("");
@@ -93,6 +94,12 @@ const Register = ({ isOpen, toggle, toggleModal, modalState }) => {
               >
                 Log In
               </Button>
+            </Container>
+
+            <Container justify="center">
+              <TextP fontS="1rem" col="#FF0000">
+                {error}
+              </TextP>
             </Container>
 
             <Container justify="center">
