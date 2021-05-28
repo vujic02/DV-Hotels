@@ -16,7 +16,7 @@ const Deal = ({ text1, text2, imgPath }) => {
       align="flex-start"
     >
       <TextP
-        m="1rem 0 1rem 1rem"
+        m="2.5rem 0 1rem 2rem"
         fontS="2rem"
         fontW="700"
         col="#fff"
@@ -25,7 +25,7 @@ const Deal = ({ text1, text2, imgPath }) => {
         {text1}
       </TextP>
       <TextP
-        m="0 0 1rem 1rem"
+        m="0 0 1rem 2rem"
         fontS="1.5rem"
         fontW="500"
         col="#fff"
