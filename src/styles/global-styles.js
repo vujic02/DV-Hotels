@@ -82,6 +82,15 @@ export const TextH1 = styled.h1`
   bottom: ${({ b }) => b};
   left: ${({ l }) => l};
 
+  a {
+    color: ${({ col }) => col};
+    text-decoration: none;
+    &:hover {
+      transition: color 0.3s ease-in;
+      color: rgba(24, 24, 24, 0.2);
+    }
+  }
+
   @media screen and (max-width: 768px) {
     font-size: ${({ fontSM }) => fontSM};
     font-weight: ${({ fontWM }) => fontWM};

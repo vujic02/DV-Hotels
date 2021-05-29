@@ -55,7 +55,12 @@ const AuthModal = ({ modalState }) => {
                 color: "rgba(0,0,0,0.85)",
               }}
             />
-            <TextH1 m="0 0 0 .5rem" fontS="1rem" fontW="600">
+            <TextH1
+              col="rgba(0,0,0,0.85)"
+              m="0 0 0 .5rem"
+              fontS="1rem"
+              fontW="600"
+            >
               Log out
             </TextH1>
           </Container>
@@ -67,8 +72,13 @@ const AuthModal = ({ modalState }) => {
                 color: "rgba(0,0,0,0.85)",
               }}
             />
-            <TextH1 m="0 0 0 .5rem" fontS="1rem" fontW="600">
-              Log in with another account
+            <TextH1
+              col="rgba(0,0,0,0.85)"
+              m="0 0 0 .5rem"
+              fontS="1rem"
+              fontW="600"
+            >
+              <Link to="/login">Log in with another account</Link>
             </TextH1>
           </Container>
           <Container p="5% 0 10% 0" align="center">
@@ -79,8 +89,13 @@ const AuthModal = ({ modalState }) => {
                 color: "rgba(0,0,0,0.85)",
               }}
             />
-            <TextH1 m="0 0 0 .5rem" fontS="1rem" fontW="600">
-              Account Settings
+            <TextH1
+              col="rgba(0,0,0,0.85)"
+              m="0 0 0 .6rem"
+              fontS="1rem"
+              fontW="600"
+            >
+              <Link to="/account-settings">Account Settings</Link>
             </TextH1>
           </Container>
         </Container>

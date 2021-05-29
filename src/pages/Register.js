@@ -31,6 +31,7 @@ const Register = ({ isOpen, toggle, toggleModal, modalState }) => {
         align="center"
         w="100%"
         h="100vh"
+        bg="#E4E4E4"
       >
         <Container w="80%" h="620px">
           <AuthContainer>
@@ -92,7 +93,7 @@ const Register = ({ isOpen, toggle, toggleModal, modalState }) => {
                 bgH="transparent"
                 onClick={(e) => registerUser(e, name, email, password)}
               >
-                Log In
+                Register
               </Button>
             </Container>
 

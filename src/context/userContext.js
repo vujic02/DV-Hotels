@@ -1,6 +1,6 @@
 import React, { useEffect, useState, createContext } from "react";
 import axios from "axios";
-import { SignUpUrl } from "../utils/backendUrls";
+import { SignUpUrl, LoginUrl } from "../utils/backendUrls";
 
 export const userContext = createContext();
 export const UserProvider = (props) => {
@@ -29,11 +29,33 @@ export const UserProvider = (props) => {
       });
   };
 
+  const loginUser = (e, email, password) => {
+    e.preventDefault();
+    console.log(password, email, e);
+
+    axios
+      .post(LoginUrl, { email, password })
+      .then((data) => {
+        console.log(data, "user login data");
+        setUser(data.data);
+      })
+      .catch((err) => {
+        console.dir(err);
+        if (err.response?.data) {
+          console.log(err.response.data);
+          setError(err.response.data);
+          setTimeout(() => {
+            setError("");
+          }, 2000);
+        }
+      });
+  };
+
   return (
     <userContext.Provider
       value={{
         userStuff: [user, setUser],
-        userFuncs: [registerUser],
+        userFuncs: [registerUser, loginUser],
         err: [error, setError],
       }}
     >
