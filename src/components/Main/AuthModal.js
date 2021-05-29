@@ -6,7 +6,7 @@ import { FiSettings } from "react-icons/fi";
 
 import { Link } from "react-router-dom";
 
-const AuthModal = ({ modalState }) => {
+const AuthModal = ({ modalState, toggleModal }) => {
   return (
     <Modal modalState={modalState}>
       <ModalContainer
@@ -47,7 +47,7 @@ const AuthModal = ({ modalState }) => {
           align="flex-start"
           justify="space-around"
         >
-          <Container p="5% 0 0 0" align="center">
+          <Container p="5% 0 0 0" align="center" onClick={() => toggleModal()}>
             <VscSignIn
               style={{
                 width: "35px",
@@ -64,7 +64,7 @@ const AuthModal = ({ modalState }) => {
               Log out
             </TextH1>
           </Container>
-          <Container p="5% 0 0 0" align="center">
+          <Container p="5% 0 0 0" align="center" onClick={() => toggleModal()}>
             <VscSignOut
               style={{
                 width: "35px",
@@ -81,7 +81,11 @@ const AuthModal = ({ modalState }) => {
               <Link to="/login">Log in with another account</Link>
             </TextH1>
           </Container>
-          <Container p="5% 0 10% 0" align="center">
+          <Container
+            p="5% 0 10% 0"
+            align="center"
+            onClick={() => toggleModal()}
+          >
             <FiSettings
               style={{
                 width: "30px",
@@ -109,7 +113,12 @@ const AuthModal = ({ modalState }) => {
           >
             Don't have an account?
           </TextH1>
-          <TextH1 fontS="0.9rem" fontW="800" col="rgba(0, 0, 0, 0.9)">
+          <TextH1
+            fontS="0.9rem"
+            fontW="800"
+            col="rgba(0, 0, 0, 0.9)"
+            onClick={() => toggleModal()}
+          >
             <Link
               style={{ textDecoration: "none", color: "rgba(0,0,0,0.7)" }}
               to="/login"
@@ -154,6 +163,11 @@ const ModalContainer = styled.div`
 
   @media screen and (max-width: 1366px) {
     width: ${({ wM1 }) => wM1};
+  }
+
+  @media screen and (max-width: 768px) {
+    top: 90px;
+    left: 20px;
   }
 `;
 

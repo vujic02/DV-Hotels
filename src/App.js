@@ -12,8 +12,6 @@ function App() {
     setModalState((prev) => !prev);
   };
 
-  console.log(modalState);
-
   const toggle = () => {
     setIsOpen((prev) => !prev);
   };
@@ -31,19 +29,44 @@ function App() {
             />
           </Route>
           <Route path="/about">
-            <About isOpen={isOpen} toggle={toggle} />
+            <About
+              isOpen={isOpen}
+              toggle={toggle}
+              toggleModal={toggleModal}
+              modalState={modalState}
+            />
           </Route>
           <Route path="/hotels">
-            <Hotels isOpen={isOpen} toggle={toggle} />
+            <Hotels
+              isOpen={isOpen}
+              toggle={toggle}
+              toggleModal={toggleModal}
+              modalState={modalState}
+            />
           </Route>
           <Route path="/contact">
-            <Contact isOpen={isOpen} toggle={toggle} />
+            <Contact
+              isOpen={isOpen}
+              toggle={toggle}
+              toggleModal={toggleModal}
+              modalState={modalState}
+            />
           </Route>
           <Route path="/login">
-            <Login />
+            <Login
+              isOpen={isOpen}
+              toggle={toggle}
+              toggleModal={toggleModal}
+              modalState={modalState}
+            />
           </Route>
           <Route path="/register">
-            <Register />
+            <Register
+              isOpen={isOpen}
+              toggle={toggle}
+              toggleModal={toggleModal}
+              modalState={modalState}
+            />
           </Route>
         </Router>
       </UserProvider>

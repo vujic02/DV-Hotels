@@ -1,15 +1,19 @@
 import React from "react";
+import { Navbar, Sidebar, Footer } from "../components/index";
 import SearchBar from "../components/Main/SearchBar";
 import SpecialDeals from "../components/Main/SpecialDeals";
-import Navbar from "../components/Navbar/Navbar";
-import Sidebar from "../components/Sidebar/Sidebar";
 import Recommended from "../components/Main/Recommended";
 import { Container, TextH1 } from "../styles/global-styles";
 
-const Hotels = ({ isOpen, toggle }) => {
+const Hotels = ({ isOpen, toggle, modalState, toggleModal }) => {
   return (
     <div>
-      <Navbar isOpen={isOpen} toggle={toggle} />
+      <Navbar
+        isOpen={isOpen}
+        toggle={toggle}
+        modalState={modalState}
+        toggleModal={toggleModal}
+      />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Container
         justify="center"
@@ -42,6 +46,7 @@ const Hotels = ({ isOpen, toggle }) => {
         Recommended
       </TextH1>
       <Recommended />
+      <Footer />
     </div>
   );
 };

@@ -9,15 +9,13 @@ import {
   MobileIcon,
 } from "../../styles/navbar-styles";
 
-import AuthModal from "../Main/AuthModal"
+import AuthModal from "../Main/AuthModal";
 import { Link } from "react-router-dom";
 import { Links } from "../../utils/Links";
 
 const Navbar = ({ toggle, isOpen, toggleModal, modalState }) => {
-
-
   let MainLogo = "./images/logo.png";
-  let UserLogo = "./images/user.jpg"
+  let UserLogo = "./images/user.jpg";
 
   return (
     <Nav isOpen={isOpen}>
@@ -35,7 +33,7 @@ const Navbar = ({ toggle, isOpen, toggleModal, modalState }) => {
       <ButtonHolder onClick={toggleModal} openModal={modalState}>
         <Avatar src={UserLogo} />
       </ButtonHolder>
-      <AuthModal modalState={modalState} />
+      <AuthModal modalState={modalState} toggleModal={toggleModal} />
       <MobileIcon isOpen={isOpen} onClick={toggle}>
         <div className="line line1"></div>
         <div className="line line2"></div>

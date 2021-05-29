@@ -47,13 +47,12 @@ export const Navlink = styled.div`
       left: 0;
     }
   }
-
 `;
 
 export const Button = styled.button`
   background-color: var(--denimBlue);
   display: inline-block;
-  padding: .6rem;
+  padding: 0.6rem;
   color: #fff;
   font-size: 1.2rem;
   cursor: pointer;
@@ -61,14 +60,12 @@ export const Button = styled.button`
   border: 1px solid transparent;
   border-radius: 5px;
 
-
-  &:active{
+  &:active {
     transition: 0.2s all ease-in-out;
     background-color: var(--white);
     color: var(--denimBlue);
     border: 1px solid var(--denimBlue);
   }
-
 `;
 
 export const ButtonHolder = styled.div`
@@ -81,7 +78,7 @@ export const ButtonHolder = styled.div`
   position: relative;
 
   &::before {
-    opacity: ${({openModal}) => (openModal ? "1" : "0")};
+    opacity: ${({ openModal }) => (openModal ? "1" : "0")};
     transition: linear all 0.5s;
     z-index: 1100;
     content: ""; // advanced use of styled components https://styled-components.com/docs/advanced#tagged-template-literals
@@ -94,7 +91,9 @@ export const ButtonHolder = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    display: none;
+    display: flex;
+    position: absolute;
+    left: 0;
   }
 `;
 
@@ -144,24 +143,25 @@ export const MobileIcon = styled.div`
     flex-direction: column;
     justify-content: space-around;
   }
-  
+
   .line {
     width: 100%;
-    height: .4rem;
+    height: 0.4rem;
     background: var(--black);
     transition: 0.3s ease-in-out all;
   }
 
   .line1 {
-    transform: ${({isOpen}) => (isOpen ? "translateY(16px) rotate(45deg)" : "" )};
+    transform: ${({ isOpen }) =>
+      isOpen ? "translateY(16px) rotate(45deg)" : ""};
   }
 
   .line2 {
-    opacity: ${({isOpen}) => (isOpen ? "0" : "1")};
+    opacity: ${({ isOpen }) => (isOpen ? "0" : "1")};
   }
 
   .line3 {
-    transform: ${({isOpen}) => (isOpen ?  "translateY(-16px) rotate(-45deg)" : "" )};
+    transform: ${({ isOpen }) =>
+      isOpen ? "translateY(-16px) rotate(-45deg)" : ""};
   }
-
 `;
