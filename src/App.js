@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import { Home, Register, Login, Contact, Hotels, About } from "./pages";
+import { Home, Register, Login, Contact, Hotels, About, Hotel } from "./pages";
 import { UserProvider } from "./context/userContext";
 
 function App() {
@@ -14,6 +14,19 @@ function App() {
 
   const toggle = () => {
     setIsOpen((prev) => !prev);
+  };
+
+  let hotel = {
+    name: "Luxury apartment in London",
+    price: "30$",
+    imgSrc: "./images/deals1.jpg",
+    description: {
+      view: "city",
+      wifi: "free",
+      bedroom: "1",
+      size: "200 sqft",
+      breakfest: "free",
+    },
   };
 
   return (
@@ -67,6 +80,9 @@ function App() {
               toggleModal={toggleModal}
               modalState={modalState}
             />
+          </Route>
+          <Route path="/hoteldev">
+            <Hotel hotel={hotel} />
           </Route>
         </Router>
       </UserProvider>
