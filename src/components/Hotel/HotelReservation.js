@@ -4,7 +4,14 @@ import { Line, Input, Selection } from "../../styles/hotelpage-styles";
 
 const HotelReservation = ({ hotel }) => {
   return (
-    <Container flexDir="column" bg="var(--aeganBlue)" borR="5px" h="90%">
+    <Container
+      flexDir="column"
+      bg="var(--aeganBlue)"
+      borR="5px"
+      h="70%"
+      hM1="100%"
+      mM1="3rem 0 0 0"
+    >
       <TextH1
         col="var(--white)"
         fontS="2rem"
@@ -38,7 +45,7 @@ const HotelReservation = ({ hotel }) => {
             <TextP col="#fff" fontS="1.3rem" fontW="300" p=".5rem 0">
               Nights
             </TextP>
-            <Selection value={2}>
+            <Selection defaultValue={2}>
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -66,7 +73,7 @@ const HotelReservation = ({ hotel }) => {
           <TextP col="#fff" fontS="1.3rem" fontW="300" p=".5rem 0">
             Rooms
           </TextP>
-          <Selection value={1}>
+          <Selection>
             <option>1</option>
             <option>2</option>
             <option>3</option>
