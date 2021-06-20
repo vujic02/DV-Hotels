@@ -8,7 +8,13 @@ const Hotel = ({ hotel }) => {
     <div>
       <Navbar />
       <Sidebar />
-      <Grid m="300px 0 100px 0" p="0 5%" cols="1fr .5fr" gridGap="0 20px">
+      <Grid
+        m="300px 0 100px 0"
+        p="0 5%"
+        cols="1fr .5fr"
+        colsM1="1fr"
+        gridGap="0 20px"
+      >
         <HotelInfo hotel={hotel} />
         <HotelReservation hotel={hotel} />
       </Grid>

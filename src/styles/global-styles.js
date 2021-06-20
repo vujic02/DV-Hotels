@@ -22,6 +22,9 @@ export const Container = styled.div`
 
   @media screen and (max-width: 1366px) {
     width: ${({ wM1 }) => wM1};
+    height: ${({ hM1 }) => hM1};
+    margin: ${({ mM1 }) => mM1};
+    flex-direction: ${({ flexDirM1 }) => flexDirM1};
   }
 `;
 
@@ -63,6 +66,10 @@ export const TextP = styled.p`
   bottom: ${({ b }) => b};
   left: ${({ l }) => l};
   text-transform: ${({ transformText }) => transformText};
+
+  @media screen and (max-width: 1366px) {
+    font-size: ${({ fontSM1 }) => fontSM1};
+  }
 
   @media screen and (max-width: 768px) {
     font-size: ${({ fontSM }) => fontSM};

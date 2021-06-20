@@ -9,7 +9,12 @@ const HotelInfo = ({ hotel }) => {
       <Container>
         <Img src={hotel.imgSrc} w="100%" h="420px" objFit="cover" borR="5px" />
       </Container>
-      <Container justify="space-between" m="2rem 0" pos="relative">
+      <Container
+        justify="space-between"
+        m="2rem 0"
+        pos="relative"
+        align="center"
+      >
         <TextH1
           fontS="clamp(2rem, 8vw, 2.5rem)"
           col="rgba(0, 0, 0, 0.8)"
@@ -26,8 +31,14 @@ const HotelInfo = ({ hotel }) => {
         </TextH1>
       </Container>
       <Line w="100%" align="center" />
-      <Container align="center" justify="space-around" h="100px">
-        <Container flexDir="column" align="center">
+      <Container
+        align="center"
+        justify="space-around"
+        h="100px"
+        flexDirM1="column"
+        hM1="100%"
+      >
+        <Container flexDir="column" align="center" mM1="10px 0 0 0">
           <Icon src={bed} />
           <TextP
             fontS="1rem"
@@ -38,7 +49,7 @@ const HotelInfo = ({ hotel }) => {
             {hotel.description.bedroom} bedroom
           </TextP>
         </Container>
-        <Container flexDir="column" align="center">
+        <Container flexDir="column" align="center" mM1="10px 0 0 0">
           <Icon src={sandwich} />
           <TextP
             fontS="1rem"
@@ -49,7 +60,7 @@ const HotelInfo = ({ hotel }) => {
             {hotel.description.breakfest} breakfest
           </TextP>
         </Container>
-        <Container flexDir="column" align="center">
+        <Container flexDir="column" align="center" mM1="10px 0 0 0">
           <ViewIcon />
           <TextP
             fontS="1rem"
@@ -60,10 +71,11 @@ const HotelInfo = ({ hotel }) => {
             {hotel.description.view} view
           </TextP>
         </Container>
-        <Container flexDir="column" align="center">
+        <Container flexDir="column" align="center" mM1="10px 0 0 0">
           <WifiIcon />
           <TextP
             fontS="1rem"
+            fontSM1
             fontW="600"
             col="rgba(0,0,0,0.45)"
             transformText="uppercase"
@@ -71,7 +83,7 @@ const HotelInfo = ({ hotel }) => {
             {hotel.description.breakfest} wifi
           </TextP>
         </Container>
-        <Container flexDir="column" align="center">
+        <Container flexDir="column" align="center" mM1="10px 0 10px 0">
           <Icon src={home} />
           <TextP
             fontS="1rem"
