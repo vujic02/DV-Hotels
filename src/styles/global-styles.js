@@ -18,6 +18,7 @@ export const Container = styled.div`
   background: ${({ bg }) => bg};
   border-radius: ${({ borR }) => borR};
   box-shadow: ${({ shadow }) => shadow};
+  justify-self: ${({ selfJustify }) => selfJustify};
 
   @media screen and (max-width: 1366px) {
     width: ${({ wM1 }) => wM1};
@@ -61,6 +62,7 @@ export const TextP = styled.p`
   right: ${({ r }) => r};
   bottom: ${({ b }) => b};
   left: ${({ l }) => l};
+  text-transform: ${({ transformText }) => transformText};
 
   @media screen and (max-width: 768px) {
     font-size: ${({ fontSM }) => fontSM};
