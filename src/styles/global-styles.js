@@ -16,6 +16,7 @@ export const Container = styled.div`
   left: ${({ l }) => l};
   bottom: ${({ b }) => b};
   background: ${({ bg }) => bg};
+  border: ${({ bor }) => bor};
   border-radius: ${({ borR }) => borR};
   box-shadow: ${({ shadow }) => shadow};
   justify-self: ${({ selfJustify }) => selfJustify};
@@ -24,7 +25,16 @@ export const Container = styled.div`
     width: ${({ wM1 }) => wM1};
     height: ${({ hM1 }) => hM1};
     margin: ${({ mM1 }) => mM1};
+    padding: ${({ pM }) => pM};
     flex-direction: ${({ flexDirM1 }) => flexDirM1};
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: ${({ pM1 }) => pM1};
+    flex-direction: ${({ flexDirM2 }) => flexDirM2};
+  }
+  @media screen and (max-width: 528px) {
+    padding: ${({ pM2 }) => pM2};
   }
 `;
 
@@ -42,6 +52,7 @@ export const Grid = styled.div`
   @media screen and (max-width: 1366px) {
     grid-template-columns: ${({ colsM1 }) => colsM1};
     margin: ${({ mM1 }) => mM1};
+    padding: ${({ pM1 }) => pM1};
   }
 
   @media screen and (max-width: 768px) {
@@ -66,6 +77,7 @@ export const TextP = styled.p`
   bottom: ${({ b }) => b};
   left: ${({ l }) => l};
   text-transform: ${({ transformText }) => transformText};
+  word-break: ${({ breakWord }) => breakWord};
 
   @media screen and (max-width: 1366px) {
     font-size: ${({ fontSM1 }) => fontSM1};
@@ -74,6 +86,10 @@ export const TextP = styled.p`
   @media screen and (max-width: 768px) {
     font-size: ${({ fontSM }) => fontSM};
     font-weight: ${({ fontWM }) => fontWM};
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: ${({ fontXSM }) => fontXSM};
   }
 `;
 
@@ -103,6 +119,10 @@ export const TextH1 = styled.h1`
   @media screen and (max-width: 768px) {
     font-size: ${({ fontSM }) => fontSM};
     font-weight: ${({ fontWM }) => fontWM};
+  }
+
+  @media screen and (max-width: 528px) {
+    font-size: ${({ fontXSM }) => fontXSM};
   }
 `;
 
@@ -161,6 +181,11 @@ export const Img = styled.img`
   margin: ${({ m }) => m};
   padding: ${({ p }) => p};
   border-radius: ${({ borR }) => borR};
+
+  @media screen and (max-width: 1366px) {
+    width: ${({ wM }) => wM};
+    height: ${({ hM }) => hM};
+  }
 `;
 
 export const DivImg = styled.div`
@@ -179,6 +204,11 @@ export const DivImg = styled.div`
   right: ${({ r }) => r};
   bottom: ${({ b }) => b};
   left: ${({ l }) => l};
+
+  @media screen and (max-width: 768px) {
+    width: ${({ wM1 }) => wM1};
+    height: ${({ hM1 }) => hM1};
+  }
 `;
 
 export const FilledStar = styled(AiFillStar)`
