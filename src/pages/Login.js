@@ -8,7 +8,7 @@ import { userContext } from "../context/userContext";
 
 const Login = ({ isOpen, toggle, toggleModal, modalState }) => {
   const { userFuncs, err } = useContext(userContext);
-  const [loginUser] = userFuncs;
+  const [registerUser, loginUser] = userFuncs;
   const [error, setError] = err;
 
   const [email, setEmail] = useState("");
