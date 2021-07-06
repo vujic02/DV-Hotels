@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import { Container, Img, TextH1 } from "../../styles/global-styles";
 import { VscSignIn, VscSignOut } from "react-icons/vsc";
 import { FiSettings } from "react-icons/fi";
+import { userContext } from "../../context/userContext";
 
 import { Link } from "react-router-dom";
 
 const AuthModal = ({ modalState, toggleModal }) => {
+  const { userStuff } = useContext(userContext);
+  const [user, setUser] = userStuff;
+
+  const logOut = () => {
+    setUser({});
+  };
+
   return (
     <Modal modalState={modalState}>
       <ModalContainer
@@ -29,7 +37,7 @@ const AuthModal = ({ modalState, toggleModal }) => {
             objFit="cover"
           />
           <TextH1 m="2% 0 0 0" fontS="1rem" fontW="500">
-            Username
+            {user?.name || "Username"}
           </TextH1>
           <TextH1
             m="1% 0 5% 0"
@@ -37,7 +45,7 @@ const AuthModal = ({ modalState, toggleModal }) => {
             fontW="700"
             col="rgba(0, 0, 0, 0.7)"
           >
-            user_email@gmail.com
+            {user?.email || "user@email.com"}
           </TextH1>
           <Line />
         </Container>
@@ -47,7 +55,14 @@ const AuthModal = ({ modalState, toggleModal }) => {
           align="flex-start"
           justify="space-around"
         >
-          <Container p="5% 0 0 0" align="center" onClick={() => toggleModal()}>
+          <Container
+            p="5% 0 0 0"
+            align="center"
+            onClick={() => {
+              toggleModal();
+              logOut();
+            }}
+          >
             <VscSignIn
               style={{
                 width: "35px",
@@ -61,7 +76,7 @@ const AuthModal = ({ modalState, toggleModal }) => {
               fontS="1rem"
               fontW="600"
             >
-              Log out
+              <a style={{ cursor: "pointer" }}>Log out</a>
             </TextH1>
           </Container>
           <Container p="5% 0 0 0" align="center" onClick={() => toggleModal()}>

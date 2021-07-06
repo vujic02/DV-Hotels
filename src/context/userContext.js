@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createContext } from "react";
+import React, { useState, createContext } from "react";
 import axios from "axios";
 import { SignUpUrl, LoginUrl } from "../utils/backendUrls";
 
@@ -10,7 +10,6 @@ export const UserProvider = (props) => {
   const registerUser = (e, name, email, password) => {
     e.preventDefault();
 
-    console.log(name, email, password);
     axios
       .post(SignUpUrl, { name, email, password })
       .then((data) => {
@@ -56,6 +55,7 @@ export const UserProvider = (props) => {
       value={{
         userStuff: [user, setUser],
         userFuncs: [registerUser, loginUser],
+        login: [loginUser],
         err: [error, setError],
       }}
     >

@@ -1,19 +1,21 @@
-import React from "react";
-import Navbar from "../components/Navbar/Navbar";
-import Sidebar from "../components/Sidebar/Sidebar";
+import React, { useContext } from "react";
+import { Navbar, Sidebar, Footer } from "../components/index";
 import SearchBar from "../components/Main/SearchBar";
 import Text from "../components/Main/Text";
 import Card from "../components/Main/Card";
 import NearbyCards from "../components/Main/Reusable/Nearby/NearbyCards";
 import ImgCards from "../components/Main/Reusable/ImgCards/ImgCards";
 import Featured from "../components/Main/Featured";
-import Footer from "../components/Footer/Footer";
-
 import { LandingOverlay } from "../styles/home-styles";
 import { Grid, Overlay, TextH1 } from "../styles/global-styles";
 import { Paths, HomePageImgs } from "../utils/Links";
+import { userContext } from "../context/userContext";
 
 const Home = ({ toggle, isOpen, modalState, toggleModal }) => {
+  const { userStuff, err } = useContext(userContext);
+
+  console.log(userStuff[0]);
+
   return (
     <section className="home-page">
       <Navbar
