@@ -1,93 +1,61 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
+import { HotelList } from "./utils/hotels";
+import { Navbar, Sidebar, Footer } from "./components";
 import { Home, Register, Login, Contact, Hotels, About, Hotel } from "./pages";
 import { UserProvider } from "./context/userContext";
 
-function App() {
+const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [modalState, setModalState] = useState(false);
+  const [hotels] = useState([...HotelList]);
+  const [selected, setSelected] = useState([]);
 
   const toggleModal = () => {
     setModalState((prev) => !prev);
   };
 
-  const toggle = () => {
+  const toggleMobile = () => {
     setIsOpen((prev) => !prev);
-  };
-
-  let hotel = {
-    name: "Luxury apartment in London",
-    price: "30$",
-    imgSrc: "./images/deals1.jpg",
-    description: {
-      view: "city",
-      wifi: "free",
-      bedroom: "1",
-      size: "200 sqft",
-      breakfest: "free",
-    },
   };
 
   return (
     <div className="App">
       <UserProvider>
         <Router>
+          <Navbar
+            isOpen={isOpen}
+            toggleMobile={toggleMobile}
+            toggleModal={toggleModal}
+            modalState={modalState}
+          />
+          <Sidebar isOpen={isOpen} toggleMobile={toggleMobile} />
           <Route exact path="/">
-            <Home
-              toggleModal={toggleModal}
-              modalState={modalState}
-              isOpen={isOpen}
-              toggle={toggle}
-            />
+            <Home hotels={hotels} setSelected={setSelected} />
           </Route>
           <Route path="/about">
-            <About
-              isOpen={isOpen}
-              toggle={toggle}
-              toggleModal={toggleModal}
-              modalState={modalState}
-            />
+            <About />
           </Route>
           <Route path="/hotels">
-            <Hotels
-              isOpen={isOpen}
-              toggle={toggle}
-              toggleModal={toggleModal}
-              modalState={modalState}
-            />
+            <Hotels hotels={hotels} setSelected={setSelected} />
           </Route>
           <Route path="/contact">
-            <Contact
-              isOpen={isOpen}
-              toggle={toggle}
-              toggleModal={toggleModal}
-              modalState={modalState}
-            />
+            <Contact />
           </Route>
           <Route path="/login">
-            <Login
-              isOpen={isOpen}
-              toggle={toggle}
-              toggleModal={toggleModal}
-              modalState={modalState}
-            />
+            <Login />
           </Route>
           <Route path="/register">
-            <Register
-              isOpen={isOpen}
-              toggle={toggle}
-              toggleModal={toggleModal}
-              modalState={modalState}
-            />
+            <Register />
           </Route>
-          <Route path="/hoteldev">
-            <Hotel hotel={hotel} />
+          <Route path="/hotel/:id">
+            <Hotel hotel={selected} />
           </Route>
+          <Footer />
         </Router>
       </UserProvider>
     </div>
   );
-}
+};
 
 export default App;

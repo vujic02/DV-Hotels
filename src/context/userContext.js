@@ -13,13 +13,10 @@ export const UserProvider = (props) => {
     axios
       .post(SignUpUrl, { name, email, password })
       .then((data) => {
-        console.log(data);
         setUser(data.data);
       })
       .catch((err) => {
-        console.dir(err);
         if (err.response?.data) {
-          console.log(err.response.data);
           setError(err.response.data);
           setTimeout(() => {
             setError("");
@@ -30,18 +27,14 @@ export const UserProvider = (props) => {
 
   const loginUser = (e, email, password) => {
     e.preventDefault();
-    console.log(password, email, e);
 
     axios
       .post(LoginUrl, { email, password })
       .then((data) => {
-        console.log(data, "user login data");
         setUser(data.data);
       })
       .catch((err) => {
-        console.dir(err);
         if (err.response?.data) {
-          console.log(err.response.data);
           setError(err.response.data);
           setTimeout(() => {
             setError("");

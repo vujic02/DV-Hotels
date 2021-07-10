@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { Container, Img, TextH1 } from "../../styles/global-styles";
 import { VscSignIn, VscSignOut } from "react-icons/vsc";

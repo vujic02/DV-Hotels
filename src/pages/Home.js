@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { Navbar, Sidebar, Footer } from "../components/index";
+import React, { useState } from "react";
 import SearchBar from "../components/Main/SearchBar";
 import Text from "../components/Main/Text";
 import Card from "../components/Main/Card";
@@ -9,22 +8,13 @@ import Featured from "../components/Main/Featured";
 import { LandingOverlay } from "../styles/home-styles";
 import { Grid, Overlay, TextH1 } from "../styles/global-styles";
 import { Paths, HomePageImgs } from "../utils/Links";
-import { userContext } from "../context/userContext";
+import { Link } from "react-router-dom";
 
-const Home = ({ toggle, isOpen, modalState, toggleModal }) => {
-  const { userStuff, err } = useContext(userContext);
-
-  console.log(userStuff[0]);
+const Home = ({ hotels, setSelected }) => {
+  const [search, setSearch] = useState("");
 
   return (
     <section className="home-page">
-      <Navbar
-        isOpen={isOpen}
-        toggle={toggle}
-        toggleModal={toggleModal}
-        modalState={modalState}
-      />
-      <Sidebar isOpen={isOpen} toggle={toggle} />
       <LandingOverlay
         bgImage="./images/landing.jpg"
         bgPos="center"
@@ -42,18 +32,20 @@ const Home = ({ toggle, isOpen, modalState, toggleModal }) => {
           pM="0 10%"
         >
           <Text containerMargin="8% 0" />
-          <SearchBar />
+          <SearchBar hotels={hotels} search={search} setSearch={setSearch} />
         </Overlay>
       </LandingOverlay>
-      <TextH1
-        opac="0.85"
-        alignText="left"
-        fontS="2rem"
-        fontW="700"
-        m="5% 0 0 5%"
-      >
-        Search Results
-      </TextH1>
+      {search !== "" && search.length > 1 ? (
+        <TextH1
+          opac="0.85"
+          alignText="left"
+          fontS="2rem"
+          fontW="700"
+          m="5% 0 0 5%"
+        >
+          Search Results
+        </TextH1>
+      ) : null}
       <Grid
         cols="repeat(3, 1fr)"
         colsM1="repeat(2, 1fr)"
@@ -63,9 +55,21 @@ const Home = ({ toggle, isOpen, modalState, toggleModal }) => {
         p="1% 5% 0 5%"
         pM="3% 5% 0 5%"
       >
-        <Card />
-        <Card />
-        <Card />
+        {search !== "" && search.length > 1
+          ? hotels
+              .filter((hotel) =>
+                hotel.name.toLowerCase().includes(search.toLowerCase())
+              )
+              .map((filteredHotel, idx) => (
+                <Link
+                  to={`/hotel/${filteredHotel.id}`}
+                  onClick={() => setSelected(filteredHotel)}
+                  key={idx}
+                >
+                  <Card hotel={filteredHotel} />
+                </Link>
+              ))
+          : null}
       </Grid>
       <TextH1
         opac="0.85"
@@ -97,7 +101,6 @@ const Home = ({ toggle, isOpen, modalState, toggleModal }) => {
         Featured Hotel
       </TextH1>
       <Featured />
-      <Footer />
     </section>
   );
 };

@@ -79,6 +79,16 @@ export const TextP = styled.p`
   text-transform: ${({ transformText }) => transformText};
   word-break: ${({ breakWord }) => breakWord};
 
+  a {
+    transition: 0.3s ease-in-out;
+    color: ${({ col }) => col};
+    text-decoration: none;
+
+    &:hover {
+      color: ${({ colH }) => colH};
+    }
+  }
+
   @media screen and (max-width: 1366px) {
     font-size: ${({ fontSM1 }) => fontSM1};
   }
@@ -170,6 +180,16 @@ export const Button = styled.div`
     border: ${({ borH }) => borH};
     background: ${({ bgH }) => bgH};
     color: ${({ colH }) => colH};
+  }
+
+  a {
+    text-decoration: none;
+    color: ${({ col }) => col};
+
+    &:hover {
+      transition: all ease-in-out 0.3s;
+      color: ${({ colH }) => colH};
+    }
   }
 `;
 
