@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import axios from "axios";
 import SearchBar from "../components/Main/SearchBar";
 import Text from "../components/Main/Text";
 import Card from "../components/Main/Card";
@@ -10,8 +11,28 @@ import { Grid, Overlay, TextH1 } from "../styles/global-styles";
 import { Paths, HomePageImgs } from "../utils/Links";
 import { Link } from "react-router-dom";
 
+import { UserUrl } from "../utils/backendUrls";
+import { userContext } from "../context/userContext";
+
 const Home = ({ hotels, setSelected }) => {
   const [search, setSearch] = useState("");
+
+  const { userStuff } = useContext(userContext);
+  const [user, setUser] = userStuff;
+
+  useEffect(() => {
+    const userEmail = localStorage.getItem("userEmail");
+    if (userEmail) {
+      axios
+        .get(UserUrl(userEmail))
+        .then((res) => {
+          setUser(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, []);
 
   return (
     <section className="home-page">

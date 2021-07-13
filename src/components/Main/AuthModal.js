@@ -13,6 +13,7 @@ const AuthModal = ({ modalState, toggleModal }) => {
 
   const logOut = () => {
     setUser({});
+    localStorage.removeItem("userEmail");
   };
 
   return (

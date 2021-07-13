@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { AuthContainer, BgContainer, Input } from "../styles/authpage-styles";
 import { Container, DivImg, Img, TextP, Button } from "../styles/global-styles";
 import { userContext } from "../context/userContext";
@@ -8,6 +8,7 @@ const Register = () => {
   const { userFuncs, err } = useContext(userContext);
   const [registerUser] = userFuncs;
   const [error, setError] = err;
+  const history = useHistory();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -66,6 +67,12 @@ const Register = () => {
             />
           </Container>
 
+          <Container justify="center" p=".5rem 0 0 0">
+            <TextP fontS="1rem" col="#FF0000">
+              {error}
+            </TextP>
+          </Container>
+
           <Container flexDir="column" justify="center" p="1.5rem 0 0 0">
             <Button
               p=".7rem 0"
@@ -80,16 +87,14 @@ const Register = () => {
               colH="var(--aeganBlue)"
               borH="1px solid var(--aeganBlue)"
               bgH="transparent"
-              onClick={(e) => registerUser(e, name, email, password)}
+              onClick={(e) => {
+                registerUser(e, name, email, password);
+                localStorage.setItem("userEmail", email);
+                history.push("/");
+              }}
             >
               Register
             </Button>
-          </Container>
-
-          <Container justify="center" p=".5rem 0 0 0">
-            <TextP fontS="1rem" col="#FF0000">
-              {error}
-            </TextP>
           </Container>
 
           <Container justify="center">

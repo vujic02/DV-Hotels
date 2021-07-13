@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { AuthContainer, BgContainer, Input } from "../styles/authpage-styles";
 import { Container, DivImg, Img, TextP, Button } from "../styles/global-styles";
 import { userContext } from "../context/userContext";
@@ -11,6 +11,7 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
 
   return (
     <Container
@@ -55,6 +56,7 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </Container>
+
           <Container flexDir="column" justify="center" p="1.5rem 0 0 0">
             <Button
               p=".7rem 0"
@@ -69,7 +71,15 @@ const Login = () => {
               colH="var(--aeganBlue)"
               borH="1px solid var(--aeganBlue)"
               bgH="transparent"
-              onClick={(e) => loginUser(e, email, password)}
+              onClick={(e) => {
+                loginUser(e, email, password);
+
+                if (!localStorage.getItem("userEmail")) {
+                  localStorage.setItem("userEmail", email);
+                }
+
+                history.push("/");
+              }}
             >
               Log In
             </Button>
