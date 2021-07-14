@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { HotelList } from "./utils/hotels";
 import { Navbar, Sidebar, Footer } from "./components";
 import { Home, Register, Login, Contact, Hotels, About, Hotel } from "./pages";
@@ -48,9 +48,13 @@ const App = () => {
           <Route path="/register">
             <Register />
           </Route>
-          <Route path="/hotel/:id">
-            <Hotel hotel={selected} />
-          </Route>
+
+          {hotels.map((ht, index) => (
+            <Route
+              path={`/hotel/${ht.id}`}
+              render={() => <Hotel hotel={ht} />}
+            />
+          ))}
           <Footer />
         </Router>
       </UserProvider>
