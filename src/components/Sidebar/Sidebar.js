@@ -1,24 +1,24 @@
-import React from 'react'
+import React from "react";
 import {
-    SidebarContainer,
-    SidebarWrapper,
-    SidebarMenu,
-    SidebarLink,
-}  from "../../styles/sidebar-styles"
+  SidebarContainer,
+  SidebarWrapper,
+  SidebarMenu,
+  SidebarLink,
+} from "../../styles/sidebar-styles";
 
-const Sidebar = ({isOpen, toggle}) => {
-    return (
-        <SidebarContainer isOpen={isOpen} onClick={toggle}>
-            <SidebarWrapper>
-                <SidebarMenu>
-                    <SidebarLink onClick={toggle}>Home</SidebarLink>
-                    <SidebarLink onClick={toggle}>About</SidebarLink>
-                    <SidebarLink onClick={toggle}>Hotels</SidebarLink>
-                    <SidebarLink onClick={toggle}>Contact</SidebarLink>
-                </SidebarMenu>
-            </SidebarWrapper>
-        </SidebarContainer>
-    )
-}
+const Sidebar = ({ isOpen, toggleMobile }) => {
+  return (
+    <SidebarContainer isOpen={isOpen} onClick={toggleMobile}>
+      <SidebarWrapper>
+        <SidebarMenu>
+          <SidebarLink onClick={toggleMobile}>Home</SidebarLink>
+          <SidebarLink onClick={toggleMobile}>About</SidebarLink>
+          <SidebarLink onClick={toggleMobile}>Hotels</SidebarLink>
+          <SidebarLink onClick={toggleMobile}>Contact</SidebarLink>
+        </SidebarMenu>
+      </SidebarWrapper>
+    </SidebarContainer>
+  );
+};
 
-export default Sidebar
+export default Sidebar;

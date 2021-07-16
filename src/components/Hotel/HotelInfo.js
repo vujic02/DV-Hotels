@@ -7,7 +7,7 @@ const HotelInfo = ({ hotel }) => {
   return (
     <Container flexDir="column">
       <Container>
-        <Img src={hotel.imgSrc} w="100%" h="420px" objFit="cover" borR="5px" />
+        <Img src={hotel.image} w="100%" h="420px" objFit="cover" borR="5px" />
       </Container>
       <Container
         justify="space-between"
@@ -27,7 +27,7 @@ const HotelInfo = ({ hotel }) => {
           col="rgba(0, 0, 0, 0.95)"
           fontW="600"
         >
-          Starting from:<span> {hotel.price} / night</span>
+          Starting from:<span> {hotel.price}$ / night</span>
         </TextH1>
       </Container>
       <Line w="100%" align="center" />
@@ -46,7 +46,7 @@ const HotelInfo = ({ hotel }) => {
             col="rgba(0,0,0,0.45)"
             transformText="uppercase"
           >
-            {hotel.description.bedroom} bedroom
+            {hotel.bedrooms} bedroom/s
           </TextP>
         </Container>
         <Container flexDir="column" align="center" mM1="10px 0 0 0">
@@ -57,7 +57,7 @@ const HotelInfo = ({ hotel }) => {
             col="rgba(0,0,0,0.45)"
             transformText="uppercase"
           >
-            {hotel.description.breakfest} breakfest
+            {hotel.breakfest} breakfest
           </TextP>
         </Container>
         <Container flexDir="column" align="center" mM1="10px 0 0 0">
@@ -68,7 +68,7 @@ const HotelInfo = ({ hotel }) => {
             col="rgba(0,0,0,0.45)"
             transformText="uppercase"
           >
-            {hotel.description.view} view
+            {hotel.view} view
           </TextP>
         </Container>
         <Container flexDir="column" align="center" mM1="10px 0 0 0">
@@ -80,7 +80,7 @@ const HotelInfo = ({ hotel }) => {
             col="rgba(0,0,0,0.45)"
             transformText="uppercase"
           >
-            {hotel.description.breakfest} wifi
+            {hotel.wifi ? "Free" : "No free"} wifi
           </TextP>
         </Container>
         <Container flexDir="column" align="center" mM1="10px 0 10px 0">
@@ -91,7 +91,7 @@ const HotelInfo = ({ hotel }) => {
             col="rgba(0,0,0,0.45)"
             transformText="uppercase"
           >
-            {hotel.description.size}
+            {hotel.size} SQFT
           </TextP>
         </Container>
       </Container>
@@ -111,18 +111,7 @@ const HotelInfo = ({ hotel }) => {
           fontW="300"
           p="1rem 0 0 0"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis
-          quam et lacus finibus volutpat. Donec ac pharetra enim, ut luctus dui.
-          Ut vel tortor a risus accumsan facilisis. Sed ultricies varius
-          dapibus. In hac habitasse platea dictumst. In id nisi placerat,
-          dapibus ante eget, feugiat nunc. Pellentesque rhoncus faucibus
-          pretium. Phasellus id sollicitudin dolor. Maecenas porttitor dictum
-          consectetur. Aliquam rutrum ex id massa dictum vestibulum. Donec sit
-          amet neque ac ligula egestas semper quis ac lacus. Fusce ullamcorper,
-          dolor ac tincidunt tempor, nisi nunc semper libero, at egestas lacus
-          nisi ut felis. Etiam eget odio suscipit, posuere nisi non, aliquam
-          augue. Aliquam metus purus, sagittis in ipsum non, placerat viverra
-          risus.
+          {hotel.details}
         </TextP>
       </Container>
     </Container>

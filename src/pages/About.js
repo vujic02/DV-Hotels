@@ -1,7 +1,4 @@
 import React from "react";
-import { Footer } from "../components";
-import Navbar from "../components/Navbar/Navbar";
-import Sidebar from "../components/Sidebar/Sidebar";
 import AboutStep from "../components/About/AboutStep";
 import {
   Button,
@@ -12,16 +9,9 @@ import {
   TextP,
 } from "../styles/global-styles";
 
-const About = ({ isOpen, toggle, modalState, toggleModal }) => {
+const About = () => {
   return (
     <div>
-      <Navbar
-        isOpen={isOpen}
-        toggle={toggle}
-        modalState={modalState}
-        toggleModal={toggleModal}
-      />
-      <Sidebar isOpen={isOpen} toggle={toggle} />
       <Container p="0 50px 0 50px" pM1="0 25px 0 25px" pM2="0 10px 0 10px">
         <Grid
           cols="1fr 1fr"
@@ -89,7 +79,6 @@ const About = ({ isOpen, toggle, modalState, toggleModal }) => {
           </Container>
         </Grid>
       </Container>
-      <Footer />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, TextP, TextH1 } from "../../styles/global-styles";
+import { Container, TextP } from "../../styles/global-styles";
 
 const AboutStep = () => {
   return (

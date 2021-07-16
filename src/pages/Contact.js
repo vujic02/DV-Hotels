@@ -1,5 +1,4 @@
 import React from "react";
-import { Footer, Navbar, Sidebar } from "../components";
 import {
   Container,
   Grid,
@@ -16,16 +15,9 @@ import {
   Label,
 } from "../styles/contactpage-styles";
 
-const Contact = ({ isOpen, toggle, modalState, toggleModal }) => {
+const Contact = () => {
   return (
     <div>
-      <Navbar
-        isOpen={isOpen}
-        toggle={toggle}
-        modalState={modalState}
-        toggleModal={toggleModal}
-      />
-      <Sidebar isOpen={isOpen} toggle={toggle} />
       <DivImg
         bgImage="./images/contactbg.jpg"
         bgPos="center"
@@ -163,7 +155,6 @@ const Contact = ({ isOpen, toggle, modalState, toggleModal }) => {
           </form>
         </Container>
       </Grid>
-      <Footer />
     </div>
   );
 };

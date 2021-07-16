@@ -5,33 +5,40 @@ import {
   CardImage,
   PriceTag,
   CardDiv,
-  PriceTagWrapper
+  PriceTagWrapper,
 } from "../../styles/card-styles";
 
 import {
   StarContainer,
   FilledStar,
-  EmptyStar
-}  from "../../styles/global-styles"
+  EmptyStar,
+} from "../../styles/global-styles";
 
-import TestImage from "../../hotel.jpg";
+const Card = ({ hotel }) => {
+  let filled = [...Array(hotel.stars)];
+  let empty = [...Array(Math.abs(hotel.stars - 5))];
 
-const Card = () => {
   return (
     <CardDiv>
-      <CardImage src={TestImage} />
+      <CardImage src={hotel.image} />
       <PriceTagWrapper>
-        <PriceTag>$120/Night</PriceTag>
+        <PriceTag>${hotel.price}/Night</PriceTag>
       </PriceTagWrapper>
-      <CardHeader>Hotel Las Vegas</CardHeader>
+      <CardHeader>{hotel.name}</CardHeader>
       <StarContainer pos="absolute" l="20px" t="20px" tM="30px">
-        <FilledStar col="var(--denimBlue)" w="1.5rem" h="1.5rem" />
-        <FilledStar col="var(--denimBlue)" w="1.5rem" h="1.5rem" />
-        <FilledStar col="var(--denimBlue)" w="1.5rem" h="1.5rem" />
-        <FilledStar col="var(--denimBlue)" w="1.5rem" h="1.5rem"/>
-        <EmptyStar col="var(--denimBlue)" w="1.5rem" h="1.5rem" />
+        {filled.map((num, index) => (
+          <FilledStar
+            col="var(--denimBlue)"
+            w="1.5rem"
+            h="1.5rem"
+            key={index}
+          />
+        ))}
+        {empty.map((num, index) => (
+          <EmptyStar col="var(--denimBlue)" w="1.5rem" h="1.5rem" key={index} />
+        ))}
       </StarContainer>
-      <CardDescription>Las Vegas Hotel Test</CardDescription>
+      <CardDescription>Hotel Description</CardDescription>
     </CardDiv>
   );
 };
