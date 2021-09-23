@@ -12,10 +12,10 @@ Hope you like it :)
 ![Home page](https://i.ibb.co/2dqsLzT/Home-Page-1.png)
 
 ### Authentication (Log in page)
-![https://i.ibb.co/nr59qn1/AuthPage.png)
+![Log In Page](https://i.ibb.co/nr59qn1/AuthPage.png)
 
 ### Hotel Details (Dynamic route page)
-![https://i.ibb.co/0KRP4nq/Hotel-Page.png)
+![Hotel Details page](https://i.ibb.co/0KRP4nq/Hotel-Page.png)
 
 
 ### Figma Design: [DV-Hotels Design](https://www.figma.com/file/zmVbAf2WiDrGgjzInqbZFT/DV-Hotels-design)
@@ -44,14 +44,20 @@ Next step is to set up the backend.
 Clone the backend repo: [Backend Repo](https://github.com/vujic02/DV-Hotels-Backend).
 
 In root folder of the backend repository folder, create a .env file in which a variable for MongoDB is needed to be added.
-```DATABASE_MONGODB = ```
+```bash
+
+DATABASE_MONGODB = 
+
+```
 
 Next step is to actually create a MongoDB Cluster which I'm not going to explain how to do here.
 There is plenty of youtube tutorials on how to do it.
 
 After the Cluster is created, create a collection and add the collection shell key to the .env variable.
 It should look something like:
-```DATABASE_MONGODB = mongodb+srv://<your_username>:<your_password>@cluster0.erpf0.mongodb.net/DatabaseName?retryWrites=true&w=majority```
+```
+DATABASE_MONGODB = mongodb+srv://<your_username>:<your_password>@cluster0.erpf0.mongodb.net/DatabaseName?retryWrites=true&w=majority
+```
 
 That's it!
 The project should be up & running completely.
